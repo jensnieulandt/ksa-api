@@ -22,6 +22,7 @@ class CreateEventsTable extends Migration
             $table->integer('last_updated_by')->unsigned()->default(0);
             $table->integer('event_page_id')->unsigned()->default(0);
 
+            $table->boolean('published')->default(true);
             $table->string('title', 50);
             $table->string('description');
             $table->boolean('allDay')->nullable();

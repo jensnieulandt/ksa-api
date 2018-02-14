@@ -11,6 +11,16 @@ class EventTypesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $eventTypes = [
+            ['title' => 'weekbrief'],
+            ['title' => 'evenement'],
+            ['title' => 'nieuws'],
+            ['title' => 'weetje'],
+        ];
+
+        foreach ($eventTypes as $eventType) {
+            $eventType = new \App\EventType($eventType);
+            $eventType->save();
+        }
     }
 }

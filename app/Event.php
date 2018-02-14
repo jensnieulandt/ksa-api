@@ -5,10 +5,55 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Event extends Model
+class Event extends EloquentBaseModel
 {
     use SoftDeletes;
     protected $dates = ['deleted_at'];
+    protected $fillable = [
+        'event_type_id',
+        'group_id',
+        'user_id',
+        'last_updated_by',
+        'published',
+        'title',
+        'description',
+        'start',
+        'end',
+        'allDay',
+        'end',
+        'url',
+        'className',
+        'editable',
+        'startEditable',
+        'durationEditable',
+        'resourceEditable',
+        'rendering',
+        'overlap',
+        'constraint',
+        'source',
+        'color',
+        'backgroundColor',
+        'borderColor',
+        'textColor',
+    ];
+    protected $forcedNullFields = [
+        'allDay',
+        'end',
+        'url',
+        'className',
+        'editable',
+        'startEditable',
+        'durationEditable',
+        'recourceEditable',
+        'rendering',
+        'overlap',
+        'constraint',
+        'source',
+        'color',
+        'backgroundColor',
+        'borderColor',
+        'textColor',
+    ];
 
     public function eventType()
     {
